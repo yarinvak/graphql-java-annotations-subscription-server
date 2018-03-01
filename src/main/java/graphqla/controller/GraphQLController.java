@@ -1,16 +1,16 @@
-package graphql;
+package graphqla.controller;
 
-import graphql.annotations.GraphQLAnnotations;
-import graphql.execution.ExecutionStrategy;
-import graphql.execution.batched.BatchedExecutionStrategy;
+import graphql.ExecutionResult;
+import graphql.GraphQL;
+import graphql.annotations.processor.GraphQLAnnotations;
 import graphql.schema.GraphQLSchema;
-import org.eclipse.jetty.client.HttpResponse;
+import graphqla.GraphQLRequest;
+import graphqla.mutation.Mutation;
+import graphqla.query.Query;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import javax.servlet.http.HttpServletResponse;
 
 import java.util.HashMap;
 

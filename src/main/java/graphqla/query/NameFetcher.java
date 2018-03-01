@@ -1,11 +1,11 @@
-package graphql;
+package graphqla.query;
 
 import graphql.execution.batched.Batched;
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;
+import graphqla.entities.Dog;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class NameFetcher implements DataFetcher<List<String>> {

@@ -1,4 +1,4 @@
-package graphql;
+package graphqla.mutation;
 
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;

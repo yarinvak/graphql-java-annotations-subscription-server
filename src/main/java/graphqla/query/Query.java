@@ -1,8 +1,11 @@
-package graphql;
+package graphqla.query;
 
-import graphql.annotations.GraphQLDataFetcher;
-import graphql.annotations.GraphQLField;
-import graphql.annotations.GraphQLName;
+
+import graphql.annotations.annotationTypes.GraphQLDataFetcher;
+import graphql.annotations.annotationTypes.GraphQLField;
+import graphql.annotations.annotationTypes.GraphQLName;
+import graphqla.input.InputClass;
+import graphqla.entities.Person;
 
 import java.util.List;
 
