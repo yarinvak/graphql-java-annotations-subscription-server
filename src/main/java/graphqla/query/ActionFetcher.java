@@ -1,4 +1,4 @@
-package graphql;
+package graphqla.query;
 
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;

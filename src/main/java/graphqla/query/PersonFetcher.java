@@ -1,10 +1,8 @@
-package graphql;
+package graphqla.query;
 
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;
-
-import java.util.Arrays;
-import java.util.List;
+import graphqla.entities.Person;
 
 public class PersonFetcher implements DataFetcher<Person> {
     @Override

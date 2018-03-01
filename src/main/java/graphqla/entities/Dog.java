@@ -1,12 +1,10 @@
-package graphql;
+package graphqla.entities;
 
-import graphql.annotations.GraphQLBatched;
-import graphql.annotations.GraphQLDataFetcher;
-import graphql.annotations.GraphQLField;
-import graphql.annotations.GraphQLName;
+
+import graphql.annotations.annotationTypes.GraphQLField;
+import graphql.annotations.annotationTypes.GraphQLName;
 
 import java.util.LinkedHashMap;
-import java.util.List;
 
 @GraphQLName("dog")
 public class Dog {

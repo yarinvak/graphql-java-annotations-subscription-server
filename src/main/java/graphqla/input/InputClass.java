@@ -1,6 +1,7 @@
-package graphql;
+package graphqla.input;
 
-import graphql.annotations.GraphQLField;
+
+import graphql.annotations.annotationTypes.GraphQLField;
 
 import java.util.LinkedHashMap;
 

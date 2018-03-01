@@ -1,5 +1,5 @@
 rootProject.name = 'annotation-test'
 
-include ':graphql-java-annotations-jahia'
-project(':graphql-java-annotations-jahia').projectDir = new File('../graphql-java-annotations-jahia')
+include ':graphql-java-annotations'
+project(':graphql-java-annotations').projectDir = new File('../graphql-java-annotations')
 
