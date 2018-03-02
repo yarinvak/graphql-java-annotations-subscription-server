@@ -10,8 +10,15 @@ public class DogUpdateResolver implements DataFetcher {
 
     @Override
     public Object get(DataFetchingEnvironment environment) {
-        ObservableList<DogUpdate> observableList = DogUpdatePublisher.observableList;
-        observableList.add(new DogUpdate("nanana1"));
+        String newName = environment.getArgument("newName");
+        // save the dog with the new name here
+
+        notifyUpdate(newName);
         return null;
+    }
+
+    private void notifyUpdate(String newName) {
+        ObservableList<DogUpdate> observableList = DogUpdatePublisher.observableList;
+        observableList.add(new DogUpdate(newName));
     }
 }

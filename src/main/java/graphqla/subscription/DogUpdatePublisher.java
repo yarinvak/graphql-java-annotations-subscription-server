@@ -3,9 +3,7 @@ package graphqla.subscription;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.observables.ConnectableObservable;
-import org.springframework.stereotype.Component;
 
-@Component
 public class DogUpdatePublisher {
     private final Flowable<DogUpdate> publisher;
 

@@ -1,6 +1,7 @@
 package graphqla;
 
 import com.google.gson.Gson;
+import graphql.ExecutionInput;
 import graphql.ExecutionResult;
 import graphql.GraphQL;
 import graphql.annotations.processor.GraphQLAnnotations;
@@ -16,7 +17,6 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicReference;
@@ -32,7 +32,9 @@ public class SocketHandler extends TextWebSocketHandler {
     public void handleTextMessage(WebSocketSession session, TextMessage message) throws InterruptedException, IOException {
         GraphQLSchema schema = getGraphQLSchema();
         GraphQL graphql = GraphQL.newGraphQL(schema).build();
-        ExecutionResult result = graphql.execute(message.getPayload(), this, new HashMap<>());
+        ExecutionInput executionInput = new Gson().fromJson(message.getPayload(), ExecutionInput.class);
+//        ExecutionInput executionInput = new ExecutionInput();
+        ExecutionResult result = graphql.execute(executionInput);
         if (result.getData() instanceof Publisher) handlePublisher(session, result);
     }
 

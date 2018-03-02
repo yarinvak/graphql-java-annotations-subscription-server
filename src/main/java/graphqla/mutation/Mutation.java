@@ -15,7 +15,7 @@ public class Mutation {
 
     @GraphQLField
     @GraphQLDataFetcher(DogUpdateResolver.class)
-    public String updateDog() {
+    public String updateDog(@GraphQLName("newName") String newName) {
         return null;
     }
 }
