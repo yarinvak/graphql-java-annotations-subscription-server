@@ -34,8 +34,6 @@ public class SocketHandler extends TextWebSocketHandler {
         GraphQL graphql = GraphQL.newGraphQL(schema).build();
         ExecutionResult result = graphql.execute(message.getPayload(), this, new HashMap<>());
         if (result.getData() instanceof Publisher) handlePublisher(session, result);
-
-        session.sendMessage(new TextMessage("Hello"));
     }
 
     private void handlePublisher(WebSocketSession session, ExecutionResult result) {

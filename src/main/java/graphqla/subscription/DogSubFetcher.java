@@ -4,7 +4,7 @@ import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;
 
 public class DogSubFetcher implements DataFetcher {
-    private final static DogUpdatePublisher dogUpdatePublisher = new DogUpdatePublisher();
+    private final DogUpdatePublisher dogUpdatePublisher = DogUpdatePublisher.getInstance();
 
     @Override
     public Object get(DataFetchingEnvironment environment) {
