@@ -1,4 +1,4 @@
-package graphql;
+package graphqla.subscription;
 
 import graphql.annotations.annotationTypes.GraphQLField;
 

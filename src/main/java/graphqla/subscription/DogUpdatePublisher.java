@@ -1,4 +1,4 @@
-package graphql;
+package graphqla.subscription;
 
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
