@@ -1,4 +1,4 @@
-package graphql;
+package graphqla;
 
 import java.util.HashMap;
 

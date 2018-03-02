@@ -1,8 +1,10 @@
-package graphql;
+package graphqla.entities;
 
-import graphql.annotations.*;
+import graphql.annotations.annotationTypes.GraphQLDataFetcher;
+import graphql.annotations.annotationTypes.GraphQLField;
+import graphql.annotations.annotationTypes.GraphQLName;
+import graphqla.query.DogsFetcher;
 
-import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 

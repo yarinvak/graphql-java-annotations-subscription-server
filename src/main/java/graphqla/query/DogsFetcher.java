@@ -1,9 +1,9 @@
-package graphql;
+package graphqla.query;
 
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetchingEnvironment;
+import graphqla.entities.Dog;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
