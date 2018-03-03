@@ -9,5 +9,13 @@ import graphql.annotations.annotationTypes.GraphQLName;
 public class Mutation {
     @GraphQLField
     @GraphQLDataFetcher(UpdateResolver.class)
-    public String update(){return null;}
+    public String update() {
+        return null;
+    }
+
+    @GraphQLField
+    @GraphQLDataFetcher(DogUpdateResolver.class)
+    public String updateDog(@GraphQLName("newName") String newName) {
+        return null;
+    }
 }

@@ -3,3 +3,6 @@ rootProject.name = 'annotation-test'
 include ':graphql-java-annotations'
 project(':graphql-java-annotations').projectDir = new File('../graphql-java-annotations')
 
+//include ':graphql-java-annotations-j'
+//project(':graphql-java-annotations-j').projectDir = new File('../graphql-java-annotations-j')
+//

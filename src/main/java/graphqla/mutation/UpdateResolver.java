@@ -7,6 +7,7 @@ public class UpdateResolver implements DataFetcher<String>{
 
     @Override
     public String get(DataFetchingEnvironment environment) {
+
         return "asdfasdfa";
     }
 }
