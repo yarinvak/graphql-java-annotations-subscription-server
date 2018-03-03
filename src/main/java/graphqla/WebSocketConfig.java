@@ -9,7 +9,7 @@ import org.springframework.web.socket.config.annotation.*;
 public class WebSocketConfig implements WebSocketConfigurer {
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        registry.addHandler(new SocketHandler(), "/subscription").setAllowedOrigins("*");
+        registry.addHandler(new SocketHandler(), "/subscription").setAllowedOrigins("*").setHandshakeHandler(new CustomHandshakeHandler());
     }
 
 }
