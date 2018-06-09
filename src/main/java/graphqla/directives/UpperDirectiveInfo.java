@@ -6,9 +6,10 @@ import graphql.annotations.directives.BasicDirectiveInfo;
 import graphql.introspection.Introspection;
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetcherFactories;
+import graphql.schema.GraphQLArgument;
 import graphql.schema.GraphQLFieldDefinition;
 
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 public class UpperDirectiveInfo extends BasicDirectiveInfo {
@@ -24,7 +25,7 @@ public class UpperDirectiveInfo extends BasicDirectiveInfo {
 
     @Override
     public List<Introspection.DirectiveLocation> getValidLocations() {
-        return Collections.singletonList(Introspection.DirectiveLocation.FIELD);
+        return Arrays.asList(Introspection.DirectiveLocation.FIELD, Introspection.DirectiveLocation.ARGUMENT_DEFINITION);
     }
 
     @Override
@@ -40,6 +41,15 @@ public class UpperDirectiveInfo extends BasicDirectiveInfo {
                     return value;
                 })));
                 return field.transform(builder -> builder.dataFetcher(dataFetcher));
+            }
+
+            @Override
+            public GraphQLArgument onArgument(AnnotationsWiringEnvironment<GraphQLArgument> environment) {
+                GraphQLArgument argument = environment.getElement();
+                if (argument.getType().getName().equals("String")) {
+                    argument = argument.transform(builder -> builder.description("This is a string argument"));
+                }
+                return argument;
             }
         };
     }

@@ -30,6 +30,11 @@ public class Person {
         return null;
     }
 
+    @GraphQLField
+    public String x(@GraphQLName("argument") @GraphQLDirectives({UpperDirectiveInfo.class}) String argument) {
+        return argument;
+    }
+
 //    @GraphQLField
 //    private @GraphQLID String id;
 //
