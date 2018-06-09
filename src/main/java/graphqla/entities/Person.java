@@ -1,8 +1,10 @@
 package graphqla.entities;
 
 import graphql.annotations.annotationTypes.GraphQLDataFetcher;
+import graphql.annotations.annotationTypes.GraphQLDirectives;
 import graphql.annotations.annotationTypes.GraphQLField;
 import graphql.annotations.annotationTypes.GraphQLName;
+import graphqla.directives.UpperDirectiveInfo;
 import graphqla.query.DogsFetcher;
 
 import java.util.LinkedHashMap;
@@ -17,11 +19,16 @@ public class Person {
 //    private @GraphQLID String idString;
 
     @GraphQLField
-    public String name(){return "my person";}
+    @GraphQLDirectives({UpperDirectiveInfo.class})
+    public String name() {
+        return "my person";
+    }
 
     @GraphQLField
     @GraphQLDataFetcher(DogsFetcher.class)
-    public List<Dog> dogs(){return null;}
+    public List<Dog> dogs() {
+        return null;
+    }
 
 //    @GraphQLField
 //    private @GraphQLID String id;
@@ -45,13 +52,13 @@ public class Person {
 //        this.id2 = id2;
 //    }
 
-        public Person() {
+    public Person() {
 //        this.idString="asdkfhaksdjfhasdf";
 //            this.id = "asdfasdf";
 //            this.id2=5;
     }
 
-    public Person(LinkedHashMap<String,Object> args){
+    public Person(LinkedHashMap<String, Object> args) {
 
     }
 //
