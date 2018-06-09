@@ -8,6 +8,9 @@ import graphql.schema.DataFetcher;
 import graphql.schema.DataFetcherFactories;
 import graphql.schema.GraphQLFieldDefinition;
 
+import java.util.Collections;
+import java.util.List;
+
 public class UpperDirectiveInfo extends BasicDirectiveInfo {
     @Override
     public String getName() {
@@ -20,8 +23,8 @@ public class UpperDirectiveInfo extends BasicDirectiveInfo {
     }
 
     @Override
-    public Introspection.DirectiveLocation[] getValidLocations() {
-        return new Introspection.DirectiveLocation[]{Introspection.DirectiveLocation.FIELD};
+    public List<Introspection.DirectiveLocation> getValidLocations() {
+        return Collections.singletonList(Introspection.DirectiveLocation.FIELD);
     }
 
     @Override
