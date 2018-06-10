@@ -3,6 +3,7 @@ package graphqla.directives;
 import graphql.annotations.directives.AnnotationsDirectiveWiring;
 import graphql.annotations.directives.AnnotationsWiringEnvironment;
 import graphql.annotations.directives.BasicDirectiveInfo;
+import graphql.annotations.directives.DirectiveArgument;
 import graphql.introspection.Introspection;
 import graphql.schema.DataFetcher;
 import graphql.schema.DataFetcherFactories;
@@ -21,6 +22,11 @@ public class UpperDirectiveInfo extends BasicDirectiveInfo {
     @Override
     public String getDescription() {
         return "makes the string upper case";
+    }
+
+    @Override
+    public DirectiveArgument[] getArguments() {
+        return new DirectiveArgument[]{new DirectiveArgument("isUpper", "1", "indicates if is upper", Integer.class)};
     }
 
     @Override

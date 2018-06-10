@@ -5,7 +5,6 @@ import graphql.GraphQL;
 import graphql.annotations.processor.GraphQLAnnotations;
 import graphql.schema.GraphQLSchema;
 import graphqla.GraphQLRequest;
-import graphqla.directives.UpperDirectiveInfo;
 import graphqla.mutation.Mutation;
 import graphqla.query.Query;
 import graphqla.subscription.Subscription;
@@ -31,7 +30,6 @@ public class GraphQLController {
         return newSchema().query(GraphQLAnnotations.object(Query.class))
                 .mutation(GraphQLAnnotations.object(Mutation.class))
                 .subscription(GraphQLAnnotations.object(Subscription.class))
-                .additionalDirective(new UpperDirectiveInfo().toDirective())
                 .build();
     }
 

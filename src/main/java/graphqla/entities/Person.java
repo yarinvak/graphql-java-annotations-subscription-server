@@ -4,6 +4,7 @@ import graphql.annotations.annotationTypes.GraphQLDataFetcher;
 import graphql.annotations.annotationTypes.GraphQLDirectives;
 import graphql.annotations.annotationTypes.GraphQLField;
 import graphql.annotations.annotationTypes.GraphQLName;
+import graphql.annotations.directives.Directive;
 import graphqla.directives.UpperDirectiveInfo;
 import graphqla.query.DogsFetcher;
 
@@ -19,7 +20,7 @@ public class Person {
 //    private @GraphQLID String idString;
 
     @GraphQLField
-    @GraphQLDirectives({UpperDirectiveInfo.class})
+    @GraphQLDirectives({@Directive(info = UpperDirectiveInfo.class, argumentsValues = {"true"})})
     public String name() {
         return "my person";
     }
@@ -31,7 +32,7 @@ public class Person {
     }
 
     @GraphQLField
-    public String x(@GraphQLName("argument") @GraphQLDirectives({UpperDirectiveInfo.class}) String argument) {
+    public String x(@GraphQLName("argument") @GraphQLDirectives(@Directive(info = UpperDirectiveInfo.class, argumentsValues = {"true"})) String argument) {
         return argument;
     }
 
