@@ -20,7 +20,7 @@ public class Person {
 //    private @GraphQLID String idString;
 
     @GraphQLField
-    @GraphQLDirectives({@Directive(info = UpperDirectiveInfo.class, argumentsValues = {"true"})})
+    @GraphQLDirectives({@Directive(info = UpperDirectiveInfo.class, argumentsValues = {"1"})})
     public String name() {
         return "my person";
     }
@@ -32,7 +32,7 @@ public class Person {
     }
 
     @GraphQLField
-    public String x(@GraphQLName("argument") @GraphQLDirectives(@Directive(info = UpperDirectiveInfo.class, argumentsValues = {"true"})) String argument) {
+    public String x(@GraphQLName("argument") @GraphQLDirectives(@Directive(info = UpperDirectiveInfo.class)) String argument) {
         return argument;
     }
 

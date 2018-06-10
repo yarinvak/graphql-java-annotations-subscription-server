@@ -26,7 +26,7 @@ public class UpperDirectiveInfo extends BasicDirectiveInfo {
 
     @Override
     public DirectiveArgument[] getArguments() {
-        return new DirectiveArgument[]{new DirectiveArgument("isUpper", "1", "indicates if is upper", Integer.class)};
+        return new DirectiveArgument[]{new DirectiveArgument("isUpper", Integer.class, null, null)};
     }
 
     @Override
