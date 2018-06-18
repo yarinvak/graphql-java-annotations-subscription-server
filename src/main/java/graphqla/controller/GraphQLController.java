@@ -3,6 +3,8 @@ package graphqla.controller;
 import graphql.ExecutionResult;
 import graphql.GraphQL;
 import graphql.annotations.processor.GraphQLAnnotations;
+import graphql.introspection.Introspection;
+import graphql.schema.GraphQLDirective;
 import graphql.schema.GraphQLSchema;
 import graphqla.GraphQLRequest;
 import graphqla.mutation.Mutation;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 
+import static graphql.Scalars.GraphQLInt;
 import static graphql.schema.GraphQLSchema.newSchema;
 
 @RestController
@@ -27,7 +30,9 @@ public class GraphQLController {
     }
 
     private GraphQLSchema getGraphQLSchema() {
-        return newSchema().query(GraphQLAnnotations.object(Query.class))
+        GraphQLDirective directive = GraphQLDirective.newDirective().name("upper").validLocations(new Introspection.DirectiveLocation[]{Introspection.DirectiveLocation.FIELD,
+                Introspection.DirectiveLocation.ARGUMENT_DEFINITION}).argument(x -> x.name("isUpper").type(GraphQLInt)).build();
+        return newSchema().query(GraphQLAnnotations.object(Query.class, directive))
                 .mutation(GraphQLAnnotations.object(Mutation.class))
                 .subscription(GraphQLAnnotations.object(Subscription.class))
                 .build();
